@@ -25,3 +25,16 @@ def insert_data_by_user(age : int ,questions : object):
         print(Fore.RED + " [Supabase] - Error: " + e.message)
         return []
 
+def insert_question_by_user(age : int , month : int,questions : object):
+    try:
+        return supabase.table("students").insert([
+            {
+                "age": age,
+                "questions": questions,
+                "points" : 0
+            }
+        ]).execute()
+    except Exception as e:
+        print(Fore.RED + " [Supabase] - Error: " + e.message)
+        return []
+
