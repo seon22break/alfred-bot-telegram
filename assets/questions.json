@@ -1,0 +1,38 @@
+[
+    {
+        "schema" : "compression", 
+        "question": "La mama come una galleta",
+        "correct-answer": "B",
+        "resource": "1.jpg",
+        "points": "12"
+    },
+    {
+        "schema" : "compression", 
+        "question": "La mama come una galleta",
+        "correct-answer": "B",
+        "resource": "1.jpg",
+        "user-answer": "A",
+        "points": "12"
+    },
+    {
+        "schema" : "compression", 
+        "question": "La mama come una galleta",
+        "correct-answer": "B",
+        "resource": "1.jpg",
+        "points": "12"
+    },
+    {
+        "schema" : "compression", 
+        "question": "La mama come una galleta",
+        "correct-answer": "B",
+        "resource": "1.jpg",
+        "points": "12"
+    },
+    {
+        "schema" : "compression", 
+        "question": "La mama come una galleta",
+        "correct-answer": "B",
+        "resource": "1.jpg",
+        "points": "12"
+    }
+]
