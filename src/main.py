@@ -15,4 +15,6 @@ if __name__ == "__main__":
         print(Fore.RED + "Token bot is not valid")
         exit(1)    
 
-    Alfred(TOKEN_TELEGRAM_BOT).run()
+    with open("src/assets/questions.json") as f:
+        questions = json.load(f)
+    Alfred(TOKEN_TELEGRAM_BOT,questions).run()
