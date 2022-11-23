@@ -2,9 +2,9 @@
 from colorama import Fore
 from telegram.ext import filters,ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler,CallbackContext,ConversationHandler
 from telegram import KeyboardButton, ReplyKeyboardMarkup, Update,Chat
+import json
 
-
-class Alfred():
+class Alfred(object):
 
     def __init__(self, token : str = None):
         self.__version__ = "0.0.1"
@@ -23,9 +23,19 @@ class Alfred():
 
     def run(self):
         bot = ApplicationBuilder().token(self.token).build()
-        bot.add_handler(CommandHandler("start", self.startCommand))
-        bot.add_handler(MessageHandler(filters.ALL,self.goCommand))
+        bot.add_handler(MessageHandler(filters.ALL , self.allMessagesHander))
         bot.run_polling()
+
+    async def allMessagesHander(self,update: Update, context: ContextTypes):
+        print(Fore.CYAN + " [Alfred] - All messages handler "+ str(update.message.text))
+        await context.bot.delete_message(update.message.chat_id,update.message.message_id)
+        if update.message.text == "/start":
+            await self.startCommand(update,context)
+        
+        if update.message.text == "🚀 Comenzar Test 🚀" or update.message.text == "/go":
+            await self.goCommand(update,context)
+
+        pass
 
     async def startCommand(self,update: Update, context: ContextTypes) -> None:
         print(Fore.CYAN + " [Alfred] - Welcome tutor message")
@@ -34,8 +44,11 @@ class Alfred():
         reply_markup = ReplyKeyboardMarkup([[KeyboardButton("🚀 Comenzar Test 🚀")]],resize_keyboard=True,one_time_keyboard=True)
         await update.message.reply_text("¿Estás preparado?", reply_markup=reply_markup)
     
-
     async def goCommand(self,update: Update, context: ContextTypes):
-        print(Fore.CYAN + " [Alfred] - Go Test")
-        await context.bot.delete_message(update.message.chat_id,update.message.message_id)
-        pass
+        print(Fore.CYAN + " [Alfred] - [BETA] Delete previous messages ")
+
+
+
+
+
+
