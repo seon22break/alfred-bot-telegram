@@ -29,7 +29,7 @@ class Supabase():
         if data == None:
             data = {}
 
-        question['user-answer'] = answer.strip().capitalize()
+        question['user-answer'] = answer.strip()
         
         data[page] = question
 
@@ -46,7 +46,7 @@ class Supabase():
             data = self.supabase.table("students").select("questions").eq("chatID",chat_id).limit(1).order("created_at").execute()
             return data.data[0]['questions']
         except Exception as e:
-            print(Fore.RED + " [Supabase] - Error: " + str(e.message))
+            print(Fore.RED + " [Supabase] - Error: " + str(e))
             return {}
 
 

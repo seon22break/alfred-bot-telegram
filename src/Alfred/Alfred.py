@@ -6,7 +6,7 @@ import json
 import os
 from Supabase.Supabase import *
 from Voice.VoiceToText import *
-
+from os import remove
 class Alfred(object):
 
     def __init__(self, token : str = None, questions : dict = None):
@@ -46,11 +46,16 @@ class Alfred(object):
             return
         
         file = await context.bot.getFile(update.message.voice.file_id)
-        
-        await file.download(str(pathlib.Path().resolve())+"/cache/tmp_voice.mp3")
+
+        tmp_file = str(pathlib.Path().resolve())+"/cache/tmp_voice.ogg"
+
+        if(os.path.exists(tmp_file)):
+            remove(tmp_file)
+
+        await file.download(tmp_file)
         
         text = VoiceToText().convert()
-
+        print(Fore.GREEN + " [Alfred] - Voice text: "+ text)
         saved = Supabase().insert_question_answer(chat_id=update.message.chat.id, question = self.questions[self.actualQuestion],answer=text,page=self.actualQuestion)
         
         if not saved:
