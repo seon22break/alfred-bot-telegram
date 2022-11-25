@@ -1,38 +1,46 @@
 [
     {
         "schema" : "compression", 
-        "question": "La mama come una galleta 1",
-        "correct-answer": "B",
-        "resource": "1.jpg",
-        "points": "12"
+        "question": "Un niño corre.",
+        "correct-answer": "A",
+        "resource": "3.jpg",
+        "points": "12",
+        "elements": "Artículos."
     },
     {
         "schema" : "compression", 
-        "question": "La mama come una galleta 2",
-        "correct-answer": "B",
-        "resource": "1.jpg",
-        "user-answer": "A",
-        "points": "12"
+        "question": "El niños juega con el balón.",
+        "correct-answer": "D",
+        "resource": "3.jpg",
+        "points": "12",
+        "elements": "Artículos."
     },
     {
-        "schema" : "compression", 
-        "question": "La mama come una galleta 3",
-        "correct-answer": "B",
-        "resource": "1.jpg",
-        "points": "12"
+        "schema" : "expression1", 
+        "resource": "2.jpg",
+        "audio" : "2.mp3",
+        "resource-selected" : "2-b.jpg",
+        "correct-answer": "El niño lleva a la niña.",
+        "elements": "Orden."
     },
     {
-        "schema" : "compression", 
-        "question": "La mama come una galleta 4",
-        "correct-answer": "B",
-        "resource": "1.jpg",
-        "points": "12"
+        "schema" : "expression1", 
+        "resource": "7.jpg",
+        "audio" : "7.mp3",
+        "resource-selected" : "7-b.jpg",
+        "correct-answer": "Están nadando.",
+        "elements": "Verbo-sufijo de número."
     },
     {
-        "schema" : "compression", 
-        "question": "La mama come una galleta 5",
-        "correct-answer": "B",
-        "resource": "1.jpg",
-        "points": "12"
+        "schema" : "expression2", 
+        "audio" : "1.mp3",
+        "correct-answer": "hace frio.",
+        "elements": "Oraciones compuestas-nexos otros tiempos y modos"
+    },
+    {
+        "schema" : "expression2", 
+        "audio" : "2.mp3",
+        "correct-answer": "si hiciera calor.",
+        "elements": "Oraciones compuestas-nexos otros tiempos y modos"
     }
 ]

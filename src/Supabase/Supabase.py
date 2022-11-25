@@ -20,20 +20,34 @@ class Supabase():
                 }   
             ]).execute()
         except Exception as e:
-            print(Fore.RED + " [Supabase] - Error: " + e.message)
-            return []
+            print(Fore.RED + " [Supabase] - Error: " + str(e.message))
+            return False
 
-    def insert_question_answer(self,chat_id : int, question: object, answer : str):
-        data = self.supabase.table("students").select("questions").eq("chatID",chat_id).limit(1).order("created_at").execute()
-        dataStored = data.data[0]
-        question['user-answer'] = answer.strip().capitalize()
-
-        if(dataStored["questions"] == None):
-            dataStored["questions"] = [question]
-        else:
-            dataStored["questions"]["answers"].append(question)
+    def insert_question_answer(self,chat_id : int, question: object, answer : str, page: int):
         
-        self.supabase.table("students").update(json.dumps(dataStored)).eq("chatID",chat_id).execute()
+        data = self.get_data_by_user(chat_id)
+        if data == None:
+            data = {}
+
+        question['user-answer'] = answer.strip().capitalize()
+        
+        data[page] = question
+
+        try:
+            return self.supabase.table("students").update({
+                "questions" : data
+                }).eq("chatID",chat_id).execute()
+        except Exception as e:
+            print(Fore.RED + " [Supabase] - Error: " + str(e))
+            return False
+
+    def get_data_by_user(self,chat_id):
+        try:
+            data = self.supabase.table("students").select("questions").eq("chatID",chat_id).limit(1).order("created_at").execute()
+            return data.data[0]['questions']
+        except Exception as e:
+            print(Fore.RED + " [Supabase] - Error: " + str(e.message))
+            return {}
 
 
 
