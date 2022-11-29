@@ -8,6 +8,14 @@
         "elements": "Artículos."
     },
     {
+        "schema" : "compression", 
+        "question": "Un niño corre.",
+        "correct-answer": "A",
+        "resource": "3.jpg",
+        "points": "12",
+        "elements": "Artículos."
+    },
+    {
         "schema" : "expression1", 
         "resource": "2.jpg",
         "audio" : "2.mp3",

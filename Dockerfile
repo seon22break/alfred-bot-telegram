@@ -11,6 +11,8 @@ RUN mkdir cache && chmod 777 cache
 
 COPY ./requirements.txt requirements.txt
 
+RUN pip install python-telegram-bot==20.0a0
+
 RUN pip install -r requirements.txt
 
 COPY . .
