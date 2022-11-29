@@ -19,5 +19,4 @@ if __name__ == "__main__":
     with open("src/assets/questions.json") as f:
         questions = json.load(f)
 
-
     Alfred(TOKEN_TELEGRAM_BOT,questions).run()

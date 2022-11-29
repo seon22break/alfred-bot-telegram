@@ -9,8 +9,8 @@
     },
     {
         "schema" : "compression", 
-        "question": "El niños juega con el balón.",
-        "correct-answer": "D",
+        "question": "Un niño corre.",
+        "correct-answer": "A",
         "resource": "3.jpg",
         "points": "12",
         "elements": "Artículos."
@@ -35,12 +35,6 @@
         "schema" : "expression2", 
         "audio" : "1.mp3",
         "correct-answer": "hace frio.",
-        "elements": "Oraciones compuestas-nexos otros tiempos y modos"
-    },
-    {
-        "schema" : "expression2", 
-        "audio" : "2.mp3",
-        "correct-answer": "si hiciera calor.",
         "elements": "Oraciones compuestas-nexos otros tiempos y modos"
     }
 ]
