@@ -1,0 +1,6 @@
+colorama==0.4.4
+pydub==0.25.1
+python-dotenv==0.21.0
+supabase==0.7.1
+python-telegram-bot==13.14
+SpeechRecognition==3.8.1
